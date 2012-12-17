@@ -843,9 +843,10 @@ and port, using the specified interface, if one is given.
 
 When OpenSSL is available on the host, an alternative version of the client
 program is compiled, one that supports TLS using OpenSSL. The additional
-arguments specify a certificate and key file when required. There is one
-additional option, -tls-on-connect, that causes the client to initiate TLS
-negotiation immediately on connection.
+arguments specify a certificate and key file when required. There are two
+additional options: -tls-on-connect, that causes the client to initiate TLS
+negotiation immediately on connection, -ocsp that causes the TLS negotiation
+to include a certificate-status request.
 
 
   client-gnutls [<options>] <ip address> <port> [<outgoing interface>] \

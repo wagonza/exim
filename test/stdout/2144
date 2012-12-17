@@ -1,0 +1,156 @@
+Connecting to ip4.ip4.ip4.ip4 port 1225 ... connected
+??? 220
+<<< 220 myhost.test.ex ESMTP Exim x.yz Tue, 2 Mar 1999 09:44:33 +0000
+>>> ehlo rhu.barb
+??? 250-
+<<< 250-myhost.test.ex Hello rhu.barb [ip4.ip4.ip4.ip4]
+??? 250-
+<<< 250-SIZE 52428800
+??? 250-
+<<< 250-8BITMIME
+??? 250-
+<<< 250-PIPELINING
+??? 250-
+<<< 250-STARTTLS
+??? 250
+<<< 250 HELP
+>>> starttls
+??? 220
+<<< 220 TLS go ahead
+Attempting to start TLS
+SSL info: before/connect initialization
+SSL info: before/connect initialization
+SSL info: SSLv2/v3 write client hello A
+SSL info: SSLv3 read server hello A
+SSL info: SSLv3 read server certificate A
+OCSP response: 
+======================================
+OCSP Response Data:
+    OCSP Response Status: successful (0x0)
+    Response Type: Basic OCSP Response
+    Version: 1 (0x0)
+    Responder Id: 8C5FC87EA7394ABB087EFE28FB859424AC6CDDFA
+    Produced At: Dec  2 18:28:21 2012 GMT
+    Responses:
+    Certificate ID:
+      Hash Algorithm: sha1
+      Issuer Name Hash: 834F7C75EAC6542FED58B2BD2B15802865301E0E
+      Issuer Key Hash: 6B693D6A18424ADD8F026539FD35248678911630
+      Serial Number: 0163D0
+    Cert Status: good
+    This Update: Dec  2 14:43:01 2012 GMT
+    Next Update: Dec 12 14:43:01 2012 GMT
+
+    Response Extensions:
+        OCSP Nonce: 
+            04106015C102BCB0D96C35DE8B7A3A5D14C9
+    Signature Algorithm: sha1WithRSAEncryption
+        23:26:99:02:b6:c8:86:2f:ed:5f:fb:f2:8e:03:d4:a9:4f:e8:
+        ea:8c:e2:0f:05:cd:f4:e7:41:82:d5:f5:a1:d9:15:b7:d2:4e:
+        e7:31:21:2c:29:c2:15:85:00:78:38:39:6d:2e:db:8e:d5:4e:
+        89:53:12:97:a9:3a:50:40:c9:bc:1f:7a:24:7f:54:ab:61:16:
+        b4:cb:ba:15:36:fc:05:fc:60:05:29:6d:a9:69:53:c5:77:ee:
+        b2:a1:4d:66:44:6d:82:76:a7:76:79:db:bd:2a:ea:4d:4f:30:
+        d0:ae:76:37:29:68:1e:47:28:9e:00:6f:37:d5:79:a2:fc:0a:
+        86:7f:9e:b1:67:e0:09:ec:5c:ac:88:ab:f4:4c:9b:64:b2:d9:
+        56:d2:d7:f3:83:d1:17:d8:f9:b0:40:93:0a:35:49:a2:0d:ea:
+        31:ed:1d:53:04:51:00:71:72:7f:66:f7:a7:df:e3:52:54:a4:
+        a5:ed:a8:d2:23:26:7d:ca:78:bf:89:50:e8:42:94:c9:73:5d:
+        48:ec:fc:e8:d3:84:84:07:e9:d6:f2:70:e3:4e:c8:77:6d:91:
+        b1:10:7a:27:bd:2f:68:44:04:97:67:04:35:31:a9:64:db:94:
+        0f:9f:96:62:e6:2f:0c:73:a4:53:46:ed:3e:e5:2d:d2:d9:a1:
+        f9:d3:d5:12
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 429586 (0x68e12)
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=US, O=GeoTrust, Inc., CN=RapidSSL CA
+        Validity
+            Not Before: May 18 16:14:07 2012 GMT
+            Not After : May  9 16:14:07 2013 GMT
+        Subject: C=US, O=GeoTrust, Inc., CN=RapidSSL OCSP Responder 1
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:f3:a3:99:36:6b:61:2b:df:58:0e:53:e2:da:8e:
+                    34:90:df:0a:01:db:4f:ef:de:9f:83:40:90:57:50:
+                    92:3a:79:b0:77:f7:00:e0:19:bc:ea:7e:c3:5e:a4:
+                    47:e0:07:5b:c9:14:4f:af:42:f6:52:71:5d:9b:e6:
+                    55:8d:fe:51:4e:43:72:66:75:ae:64:29:57:6a:1a:
+                    e0:6b:6e:7c:21:a5:ee:42:5b:71:aa:f1:3f:1b:e5:
+                    e7:15:24:54:a3:78:37:0c:5d:b6:fb:04:2f:58:39:
+                    71:7a:65:60:e5:b9:0c:3b:62:b0:1a:05:ab:02:cb:
+                    12:7a:6a:a4:35:0d:90:16:91:4d:52:28:51:4c:0d:
+                    d3:25:e1:dc:f5:03:9e:55:1e:cc:74:94:a1:94:4d:
+                    be:45:08:f5:5c:4a:54:60:33:74:74:27:aa:6a:b9:
+                    17:08:2b:25:c2:68:c7:1d:61:4a:3d:50:d7:dc:9f:
+                    ae:6e:8c:f7:2e:eb:43:ad:b4:d1:25:bb:e5:26:e1:
+                    0b:ea:9c:3c:b5:12:5a:c4:32:9e:2d:cc:8e:14:16:
+                    bd:cf:0a:aa:eb:ed:04:48:18:07:12:6e:56:c7:8f:
+                    38:79:ee:13:6e:1a:34:04:fa:0a:2d:f3:84:37:28:
+                    15:4f:0d:3d:a7:36:56:65:09:40:3b:26:6a:57:7f:
+                    a9:39
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Authority Key Identifier: 
+                keyid:6B:69:3D:6A:18:42:4A:DD:8F:02:65:39:FD:35:24:86:78:91:16:30
+
+            OCSP No Check: 
+
+            X509v3 Extended Key Usage: 
+                OCSP Signing
+            X509v3 Key Usage: critical
+                Digital Signature
+    Signature Algorithm: sha1WithRSAEncryption
+        b7:8e:c8:62:41:e3:d4:0c:be:25:ed:06:b1:7a:fe:d8:6a:6d:
+        8d:95:85:3b:d1:a8:ee:35:da:6f:1e:4f:7b:3e:79:44:19:de:
+        4f:db:28:9f:6c:69:14:0c:49:53:bb:12:71:a2:30:71:28:19:
+        85:7b:5c:41:a1:02:0f:8a:2a:a0:e6:a5:3d:e8:79:fe:9b:ee:
+        06:43:79:c3:7d:19:0e:6c:63:0f:5b:92:8c:b9:68:7c:ba:f3:
+        1e:87:72:0f:01:2a:11:f3:45:01:f9:f6:c9:ec:31:10:c1:10:
+        de:3d:6e:88:fa:38:f8:92:4b:17:59:86:52:0b:ce:ed:b1:ec:
+        e4:41:95:cc:64:c3:3b:fa:d1:78:cc:95:2d:58:84:6f:dc:72:
+        63:bf:52:f3:d9:bf:bb:90:ce:d3:da:66:c4:0d:70:5c:90:9a:
+        2f:e3:00:f1:04:96:35:7a:16:25:45:7e:04:43:a4:d4:e4:29:
+        fb:03:6f:47:11:1b:aa:c1:34:f9:9d:f2:3c:d9:2d:80:6c:eb:
+        e7:8d:19:4c:89:e9:01:22:43:3b:1d:07:aa:12:3c:99:03:4b:
+        b3:15:fd:07:e7:fb:e3:fd:3f:3d:b2:6c:51:5d:ae:e0:cd:7c:
+        05:71:96:39:c7:69:0c:84:7a:5d:74:65:33:79:40:f4:06:08:
+        f6:df:ca:5a
+-----BEGIN CERTIFICATE-----
+MIIDXDCCAkSgAwIBAgIDBo4SMA0GCSqGSIb3DQEBBQUAMDwxCzAJBgNVBAYTAlVT
+MRcwFQYDVQQKEw5HZW9UcnVzdCwgSW5jLjEUMBIGA1UEAxMLUmFwaWRTU0wgQ0Ew
+HhcNMTIwNTE4MTYxNDA3WhcNMTMwNTA5MTYxNDA3WjBKMQswCQYDVQQGEwJVUzEX
+MBUGA1UEChMOR2VvVHJ1c3QsIEluYy4xIjAgBgNVBAMTGVJhcGlkU1NMIE9DU1Ag
+UmVzcG9uZGVyIDEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDzo5k2
+a2Er31gOU+LajjSQ3woB20/v3p+DQJBXUJI6ebB39wDgGbzqfsNepEfgB1vJFE+v
+QvZScV2b5lWN/lFOQ3Jmda5kKVdqGuBrbnwhpe5CW3Gq8T8b5ecVJFSjeDcMXbb7
+BC9YOXF6ZWDluQw7YrAaBasCyxJ6aqQ1DZAWkU1SKFFMDdMl4dz1A55VHsx0lKGU
+Tb5FCPVcSlRgM3R0J6pquRcIKyXCaMcdYUo9UNfcn65ujPcu60OttNElu+Um4Qvq
+nDy1ElrEMp4tzI4UFr3PCqrr7QRIGAcSblbHjzh57hNuGjQE+got84Q3KBVPDT2n
+NlZlCUA7JmpXf6k5AgMBAAGjWTBXMB8GA1UdIwQYMBaAFGtpPWoYQkrdjwJlOf01
+JIZ4kRYwMA8GCSsGAQUFBzABBQQCBQAwEwYDVR0lBAwwCgYIKwYBBQUHAwkwDgYD
+VR0PAQH/BAQDAgeAMA0GCSqGSIb3DQEBBQUAA4IBAQC3jshiQePUDL4l7Qaxev7Y
+am2NlYU70ajuNdpvHk97PnlEGd5P2yifbGkUDElTuxJxojBxKBmFe1xBoQIPiiqg
+5qU96Hn+m+4GQ3nDfRkObGMPW5KMuWh8uvMeh3IPASoR80UB+fbJ7DEQwRDePW6I
++jj4kksXWYZSC87tsezkQZXMZMM7+tF4zJUtWIRv3HJjv1Lz2b+7kM7T2mbEDXBc
+kJov4wDxBJY1ehYlRX4EQ6TU5Cn7A29HERuqwTT5nfI82S2AbOvnjRlMiekBIkM7
+HQeqEjyZA0uzFf0H5/vj/T89smxRXa7gzXwFcZY5x2kMhHpddGUzeUD0Bgj238pa
+-----END CERTIFICATE-----
+======================================
+SSL info: unknown state
+SSL info: SSLv3 read server key exchange A
+SSL info: SSLv3 read server certificate request A
+SSL info: SSLv3 read server done A
+SSL info: SSLv3 write client certificate A
+SSL info: SSLv3 write client key exchange A
+SSL info: SSLv3 write change cipher spec A
+SSL info: SSLv3 write finished A
+SSL info: SSLv3 flush data
+SSL info: SSLv3 read server session ticket A
+SSL info: SSLv3 read server session ticket A
+pppp:error:14094410:SSL routines:SSL3_READ_BYTES:sslv3 alert handshake failure:s3_pkt.c:dddd:SSL alert number 40
+Failed to start TLS
+End of script

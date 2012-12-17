@@ -66,6 +66,9 @@ latter needs a whole pile of tables. */
 #include <openssl/ssl.h>
 #include <openssl/err.h>
 #include <openssl/rand.h>
+#include <openssl/ocsp.h>
+
+int ocsp_stapling = 0;
 #endif
 
 
@@ -145,6 +148,37 @@ sigalrm_seen = 1;
 /****************************************************************************/
 
 #ifdef HAVE_OPENSSL
+
+static int
+tls_client_stapling_cb(SSL *s, void *arg)
+{
+        const unsigned char *p;
+        int len;
+        OCSP_RESPONSE *rsp;
+
+        len = SSL_get_tlsext_status_ocsp_resp(s, &p);
+        printf("OCSP response: ");
+        if (!p)
+                {
+                printf("no response sent\n");
+                return 1;
+                }
+        rsp = d2i_OCSP_RESPONSE(NULL, &p, len);
+        if (!rsp)
+                {
+                printf("response parse error\n");
+                BIO_dump_indent(arg, (char *)p, len, 4);
+                return 0;
+                }
+        printf("\n======================================\n");
+        OCSP_RESPONSE_print(arg, rsp, 0);
+        printf("======================================\n");
+        OCSP_RESPONSE_free(rsp);
+
+return 1;
+}
+
+
 /*************************************************
 *         Start an OpenSSL TLS session           *
 *************************************************/
@@ -160,6 +194,13 @@ RAND_load_file("client.c", -1);   /* Not *very* random! */
 SSL_set_session_id_context(*ssl, sid_ctx, strlen(sid_ctx));
 SSL_set_fd (*ssl, sock);
 SSL_set_connect_state(*ssl);
+
+if (ocsp_stapling)
+  {
+  SSL_CTX_set_tlsext_status_cb(ctx, tls_client_stapling_cb);
+  SSL_CTX_set_tlsext_status_arg(ctx, BIO_new_fp(stdout, BIO_NOCLOSE));
+  SSL_set_tlsext_status_type(*ssl, TLSEXT_STATUSTYPE_ocsp);
+  }
 
 signal(SIGALRM, sigalrm_handler_flag);
 sigalrm_seen = 0;
@@ -418,6 +459,13 @@ while (argc >= argi + 1 && argv[argi][0] == '-')
     tls_on_connect = 1;
     argi++;
     }
+#ifdef HAVE_OPENSSL
+  if (strcmp(argv[argi], "-ocsp") == 0)
+    {
+    ocsp_stapling = 1;
+    argi++;
+    }
+#endif
   else if (argv[argi][1] == 't' && isdigit(argv[argi][2]))
     {
     tmplong = strtol(argv[argi]+2, &end, 10);
