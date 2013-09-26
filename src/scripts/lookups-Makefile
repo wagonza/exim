@@ -139,6 +139,12 @@ fi
 
 OBJ="${OBJ} spf.o"
 
+# Because the variable is EXPERIMENTAL_REDIS and not LOOKUP_REDIS we
+# always include redis.o and compile a dummy if EXPERIMENTAL_REDIS is not
+# defined.
+
+OBJ="${OBJ} redis.o"
+
 echo "MODS = $MODS"
 echo "OBJ = $OBJ"
 

@@ -825,6 +825,9 @@ fprintf(f, "Support for:");
 #ifdef EXPERIMENTAL_PRDR
   fprintf(f, " Experimental_PRDR");
 #endif
+#ifdef EXPERIMENTAL_REDIS
+  fprintf(f, " Experimental_Redis");
+#endif
 fprintf(f, "\n");
 
 fprintf(f, "Lookups (built-in):");
