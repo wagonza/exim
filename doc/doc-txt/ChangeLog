@@ -229,6 +229,12 @@ TL/11 Bugzilla 1382 - Option ldap_require_cert overrides start_tls
       using NULL (global ldap config) instead of ldap handle (per
       session). Bug diagnosis and testing by alxgomz.
 
+TL/12 Bugzilla 1217 - Redis lookup support has been added. It is only enabled
+      when Exim is compiled with EXPERIMENTAL_REDIS. A new config variable
+      redis_servers = needs to be configured which will be used by the redis lookup.
+      Patch from Warren Baker, of The Packet Hub.
+
+
 Exim version 4.80.1
 -------------------
 
