@@ -151,9 +151,9 @@ perform_redis_search(uschar *command, uschar *server, uschar **resultptr,
                /* Get store for a new handle, initialize it, and connect to the server */
                /* XXX: Use timeouts ? */
                if (socket != NULL)
-                       redis_handle = redisConnectUnix(socket);
+                       redis_handle = redisConnectUnix(CCS socket);
                else
-                       redis_handle = redisConnect(server, port);
+                       redis_handle = redisConnect(CCS server, port);
                if (redis_handle == NULL) {
                        *errmsg = string_sprintf("REDIS connection failed");
                        *defer_break = FALSE;
@@ -216,7 +216,7 @@ perform_redis_search(uschar *command, uschar *server, uschar **resultptr,
 
                break;
        case REDIS_REPLY_INTEGER:
-               ttmp = (redis_reply->integer == 1) ? "true" : "false";
+               ttmp = (redis_reply->integer == 1) ? US"true" : US"false";
                result = string_cat(result, &ssize, &offset, US ttmp, Ustrlen(ttmp));
                break;
        case REDIS_REPLY_STRING:
@@ -308,7 +308,7 @@ perform_redis_search(uschar *command, uschar *server, uschar **resultptr,
  */
 
 static int
-redis_find(void *handle __unused, uschar *filename __unused, uschar *command, int length,
+redis_find(void *handle __attribute__((unused)), uschar *filename __attribute__((unused)), uschar *command, int length,
   uschar **result, uschar **errmsg, BOOL *do_cache)
 {
        return lf_sqlperform(US"Redis", US"redis_servers", redis_servers, command,
